@@ -1,13 +1,13 @@
 
 File References:
 - Podfile
-- AppHost-TestLib-Unit-Tests:
-  - AppHost-TestLib-Unit-Tests-Info.plist
-  - LaunchScreen.storyboard
-  - main.m
 - Development Pods:
   - TestLib:
     - main.swift
+    - AppHost-TestLib-Unit-Tests:
+      - AppHost-TestLib-Unit-Tests-Info.plist
+      - LaunchScreen.storyboard
+      - main.m
     - Pod:
       - TestLib.podspec
     - Support Files:
@@ -136,8 +136,6 @@ Targets:
           PRODUCT_NAME: "$(TARGET_NAME:c99extidentifier)"
           SDKROOT: iphoneos
           SKIP_INSTALL: 'YES'
-          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
-          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
           TARGETED_DEVICE_FAMILY: '1,2'
           VERSIONING_SYSTEM: apple-generic
           VERSION_INFO_PREFIX: ''
@@ -172,8 +170,6 @@ Targets:
           PRODUCT_NAME: "$(TARGET_NAME:c99extidentifier)"
           SDKROOT: iphoneos
           SKIP_INSTALL: 'YES'
-          SWIFT_COMPILATION_MODE: wholemodule
-          SWIFT_OPTIMIZATION_LEVEL: "-O"
           TARGETED_DEVICE_FAMILY: '1,2'
           VALIDATE_PRODUCT: 'YES'
           VERSIONING_SYSTEM: apple-generic
@@ -218,7 +214,6 @@ Targets:
           SDKROOT: iphoneos
           SKIP_INSTALL: 'YES'
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) "
-          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
           SWIFT_VERSION: '4'
           TARGETED_DEVICE_FAMILY: '1,2'
           VERSIONING_SYSTEM: apple-generic
@@ -250,8 +245,6 @@ Targets:
           SDKROOT: iphoneos
           SKIP_INSTALL: 'YES'
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) "
-          SWIFT_COMPILATION_MODE: wholemodule
-          SWIFT_OPTIMIZATION_LEVEL: "-O"
           SWIFT_VERSION: '4'
           TARGETED_DEVICE_FAMILY: '1,2'
           VALIDATE_PRODUCT: 'YES'
@@ -278,7 +271,7 @@ Targets:
           CODE_SIGN_IDENTITY[sdk=appletvos*]: ''
           CODE_SIGN_IDENTITY[sdk=iphoneos*]: ''
           CODE_SIGN_IDENTITY[sdk=watchos*]: ''
-          GCC_PREFIX_HEADER: Target Support Files/TestLib/TestLib-Unit-UnitTests2-prefix.pch
+          GCC_PREFIX_HEADER: Target Support Files/TestLib/TestLib-Unit-UnitTests1-prefix.pch
           INFOPLIST_FILE: Target Support Files/TestLib/TestLib-Unit-UnitTests1-Info.plist
           IPHONEOS_DEPLOYMENT_TARGET: '9.0'
           OTHER_LDFLAGS:
@@ -287,7 +280,6 @@ Targets:
           PRODUCT_NAME: TestLib-Unit-UnitTests1
           SDKROOT: iphoneos
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) "
-          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
           SWIFT_VERSION: '4'
         Base Configuration: TestLib.unit-unittests1.xcconfig
     - Release:
@@ -299,14 +291,12 @@ Targets:
           CODE_SIGN_IDENTITY[sdk=appletvos*]: ''
           CODE_SIGN_IDENTITY[sdk=iphoneos*]: ''
           CODE_SIGN_IDENTITY[sdk=watchos*]: ''
-          GCC_PREFIX_HEADER: Target Support Files/TestLib/TestLib-Unit-UnitTests2-prefix.pch
+          GCC_PREFIX_HEADER: Target Support Files/TestLib/TestLib-Unit-UnitTests1-prefix.pch
           INFOPLIST_FILE: Target Support Files/TestLib/TestLib-Unit-UnitTests1-Info.plist
           IPHONEOS_DEPLOYMENT_TARGET: '9.0'
           PRODUCT_NAME: TestLib-Unit-UnitTests1
           SDKROOT: iphoneos
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) "
-          SWIFT_COMPILATION_MODE: wholemodule
-          SWIFT_OPTIMIZATION_LEVEL: "-O"
           SWIFT_VERSION: '4'
           VALIDATE_PRODUCT: 'YES'
         Base Configuration: TestLib.unit-unittests1.xcconfig
@@ -339,7 +329,6 @@ Targets:
           PRODUCT_NAME: TestLib-Unit-UnitTests2
           SDKROOT: iphoneos
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) "
-          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
           SWIFT_VERSION: '4'
           TEST_HOST: "$(BUILT_PRODUCTS_DIR)/AppHost-TestLib-Unit-Tests.app/AppHost-TestLib-Unit-Tests"
         Base Configuration: TestLib.unit-unittests2.xcconfig
@@ -358,8 +347,6 @@ Targets:
           PRODUCT_NAME: TestLib-Unit-UnitTests2
           SDKROOT: iphoneos
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) "
-          SWIFT_COMPILATION_MODE: wholemodule
-          SWIFT_OPTIMIZATION_LEVEL: "-O"
           SWIFT_VERSION: '4'
           TEST_HOST: "$(BUILT_PRODUCTS_DIR)/AppHost-TestLib-Unit-Tests.app/AppHost-TestLib-Unit-Tests"
           VALIDATE_PRODUCT: 'YES'
@@ -399,8 +386,6 @@ Build Configurations:
       CLANG_WARN_UNGUARDED_AVAILABILITY: YES_AGGRESSIVE
       CLANG_WARN_UNREACHABLE_CODE: 'YES'
       CLANG_WARN__DUPLICATE_METHOD_MATCH: 'YES'
-      CODE_SIGNING_ALLOWED: 'NO'
-      CODE_SIGNING_REQUIRED: 'NO'
       COPY_PHASE_STRIP: 'NO'
       DEBUG_INFORMATION_FORMAT: dwarf
       ENABLE_STRICT_OBJC_MSGSEND: 'YES'
@@ -426,6 +411,8 @@ Build Configurations:
       PRODUCT_NAME: "$(TARGET_NAME)"
       STRIP_INSTALLED_PRODUCT: 'NO'
       SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+      SWIFT_VERSION: '4.2'
       SYMROOT: "${SRCROOT}/../build"
 - Release:
     Build Settings:
@@ -458,8 +445,6 @@ Build Configurations:
       CLANG_WARN_UNGUARDED_AVAILABILITY: YES_AGGRESSIVE
       CLANG_WARN_UNREACHABLE_CODE: 'YES'
       CLANG_WARN__DUPLICATE_METHOD_MATCH: 'YES'
-      CODE_SIGNING_ALLOWED: 'NO'
-      CODE_SIGNING_REQUIRED: 'NO'
       COPY_PHASE_STRIP: 'NO'
       DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
       ENABLE_NS_ASSERTIONS: 'NO'
@@ -480,4 +465,7 @@ Build Configurations:
       MTL_FAST_MATH: 'YES'
       PRODUCT_NAME: "$(TARGET_NAME)"
       STRIP_INSTALLED_PRODUCT: 'NO'
+      SWIFT_COMPILATION_MODE: wholemodule
+      SWIFT_OPTIMIZATION_LEVEL: "-O"
+      SWIFT_VERSION: '4.2'
       SYMROOT: "${SRCROOT}/../build"
